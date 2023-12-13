@@ -98,7 +98,7 @@ export default function SideBar() {
             <ItemSideBar to={PathRoute.setting} name='Thiết lập' svg={SvgConstants.setting} />
           </ul>
           <ul className='pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700'>
-            <ItemSideBar to={PathRoute.profile} name='Trợ giúp' svg={SvgConstants.profile} />
+            <ItemSideBar to={PathRoute.profile} name='Hồ sơ' svg={SvgConstants.profile} />
           </ul>
         </div>
       </aside>

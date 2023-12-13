@@ -1,6 +1,6 @@
 export const PathRoute = {
   login: "login",
-  register: "register",
+  register: "/register",
   logout: "logout",
   user: "user",
   account: "account",
@@ -10,5 +10,8 @@ export const PathRoute = {
   event: "event",
   histories: "histories",
   setting: "setting",
-  authorization: "authorization",
+  authorization: "/authorization",
+  authorization_user_group: `/user-group`,
+  authorization_role: "/role",
+  authorization_permission: "/permission",
 } as const;
