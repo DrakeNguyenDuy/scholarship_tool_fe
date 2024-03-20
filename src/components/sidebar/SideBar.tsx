@@ -98,8 +98,11 @@ export default function SideBar() {
             <ItemSideBar to={PathRoute.setting} name='Thiết lập' svg={SvgConstants.setting} />
           </ul>
           <ul className='pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 dark:border-gray-700'>
-            <ItemSideBar to={PathRoute.profile} name='Trợ giúp' svg={SvgConstants.profile} />
+            <ItemSideBar to={PathRoute.profile} name='Hồ sơ' svg={SvgConstants.profile} />
           </ul>
+          <p className='tracking-tighter text-gray-500 md:text-sm dark:text-gray-400'>
+            @ 2024 - A product of <a href='https://www.matohela.com/'>metohela.com</a>
+          </p>
         </div>
       </aside>
       <div className='p-4 sm:ml-64'>
