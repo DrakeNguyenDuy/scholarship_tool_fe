@@ -1,3 +1,3 @@
-import Dashboard from "./Dashboard";
+import Permission from './Permission'
 
-export default Dashboard;
+export default Permission

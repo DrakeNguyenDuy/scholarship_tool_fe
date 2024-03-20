@@ -1,10 +1,10 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError, HttpStatusCode } from 'axios'
 import { WorkingWithLS } from '../utils/LocalStorage'
 import { KeyLocalStorage } from '../constants/KeyLocalService'
-import { LoginReponse } from '../types/LoginResponse'
 import { PathRoute } from '../constants/PathRoute'
 // eslint-disable-next-line import/no-unresolved
-import { urlApi } from '../constants/config'
+import { LoginResponse } from '../types/LoginResponse'
+import { urlApi } from '../constants/Config'
 
 class Http {
   instance: AxiosInstance
@@ -32,14 +32,17 @@ class Http {
       }
     )
     this.instance.interceptors.response.use(
-      (response: AxiosResponse<LoginReponse>) => {
+      (response: AxiosResponse<LoginResponse>) => {
         const { url } = response.config
         if (url && [PathRoute.login as string].includes(url) && response.status == HttpStatusCode.Ok) {
           const data = response.data
           this.accessToken = data.access_token
           WorkingWithLS.saveToLS([
             { key: KeyLocalStorage.access_token, value: this.accessToken },
-            { key: KeyLocalStorage.permissions, value: JSON.stringify(data.permissions) || '' }
+            {
+              key: KeyLocalStorage.permissions,
+              value: JSON.stringify(data.permissions) || ''
+            }
           ])
         } else if (url === PathRoute.logout) {
           this.accessToken = ''

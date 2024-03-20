@@ -1,3 +1,3 @@
-import Dashboard from "./Dashboard";
+import Role from './Role'
 
-export default Dashboard;
+export default Role

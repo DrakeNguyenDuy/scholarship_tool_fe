@@ -11,10 +11,13 @@ import Authorization from './pages/authorization'
 import Setting from './pages/setting'
 import { Context } from './context/AppContext'
 
+// const pagePath = './pages'
 const Login = lazy(() => import('./pages/login'))
 const NotFound = lazy(() => import('./pages/not_found'))
 const Dashboard = lazy(() => import('./pages/dashboard'))
 const UserGroup = lazy(() => import('./pages/authorization/user-group'))
+const Role = lazy(() => import('./pages/authorization/role'))
+const Permission = lazy(() => import('./pages/authorization/permission'))
 
 function ProtectedRoute() {
   const { isAuth } = useContext(Context)
@@ -87,7 +90,7 @@ function App() {
                 path={PathRoute.authorization + PathRoute.authorization_role}
                 element={
                   <Suspense>
-                    <UserGroup />
+                    <Role />
                   </Suspense>
                 }
               />
@@ -95,7 +98,7 @@ function App() {
                 path={PathRoute.authorization + PathRoute.authorization_permission}
                 element={
                   <Suspense>
-                    <UserGroup />
+                    <Permission />
                   </Suspense>
                 }
               />
